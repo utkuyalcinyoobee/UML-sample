@@ -48,7 +48,7 @@ export default {
             this.fetch_PUT_update_request_as_ignored();
         },
         fetch_PUT_update_user_friendlist_for_user(userID,friendID){
-
+            this.user_database.filter((user)=>user._id==userID)[0].friend_list_array.push(friendID);
         },
         fetch_PUT_update_request_as_ignored(){
             this.request_obj.ignored = !this.request_obj.ignored;
@@ -57,10 +57,13 @@ export default {
             let request_index = this.friend_requests.indexOf(this.request_obj);
             this.friend_requests.splice(request_index,1);
             this.accepted=true;
+        },
+        fetch_GET_sender_info(){
+          this.request_sender_user_obj = this.user_database.filter((user)=>user._id==this.request_obj.id_of_user_sending_request)[0]
         }
     },
     created(){
-        this.request_sender_user_obj = this.user_database.filter((user)=>user._id==this.request_obj.id_of_user_sending_request)[0]
+        this.fetch_GET_sender_info();
     }
 }
 </script>

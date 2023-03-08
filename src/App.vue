@@ -23,7 +23,7 @@ body{margin: 0;}
 export default {
   data(){
     return{
-      current_user:{_id:'user002'},
+      current_user:{_id:''},
 
       // USER DATABASE
       users_database:[
@@ -65,6 +65,13 @@ export default {
           id_of_user_receiving_request:'user002',
           request_msg:'Yo its me Johnny',
           ignored:false
+        },
+        {
+          _id:'req002',
+          id_of_user_sending_request:'user004',
+          id_of_user_receiving_request:'user002',
+          request_msg:'hey its me Jack',
+          ignored:false
         }
       ],
 
@@ -74,26 +81,32 @@ export default {
           _id:'msg001',
           response_to_other_chat:false,
           id_of_message_responded:'',
-          user_id:'user003',
+          id_of_user_sending_request:'user003',
+          id_of_user_receiving_request:'user001',
           message_content:'u up for a gig next week?'
         },
         {
           _id:'msg002',
           response_to_other_chat:true,
-          id_of_message_responded:'001',
-          user_id:'user001',
+          id_of_message_responded:'msg001',
+          id_of_user_sending_request:'user001',
+          id_of_user_receiving_request:'user003',
           message_content:'nah, too busy'
         },
         {
           _id:'msg003',
           response_to_other_chat:true,
-          id_of_message_responded:'001',
-          user_id:'user003',
+          id_of_message_responded:'msg001',
+          id_of_user_sending_request:'user003',
+          id_of_user_receiving_request:'user001',
           message_content:'*sad face*'
         }
       ]
     } // end of data return
   }, // end of data()
-   
+  created(){
+    if(!this.current_user._id.length)
+      this.$router.push('/login')
+  } 
 }
 </script>
