@@ -5,8 +5,7 @@
             <router-link to="/login"><span class="login-btn">Login</span></router-link>
         </div>
         <div class="links-flex">
-                <router-link to="/view-requests" class="link">Friends</router-link>
-                <router-link to="/view-messages" class="link">Chat</router-link>
+                <router-link to="/friends" class="link">Friends</router-link>
         </div>
     </div>
 </template>

@@ -5,19 +5,20 @@
         <h2>Logged as {{ current_user_obj.username }}</h2>
         <h3>Welcome {{ current_user_obj.first_name }} {{ current_user_obj.last_name }}</h3>
 
+        <router-link to="/search-user" class="search-friends-btn"><h2>Search for Friends</h2></router-link>
+
         <div class="friend-requests" v-if="incoming_friend_requests.length > 0">
             <h5>YOU HAVE NEW FRIEND REQUESTS</h5>
             <FriendRequest v-for="request in incoming_friend_requests" :request_obj="request" :user_database="user_database" :friend_requests='friend_requests' />
         </div>
     
-
-        <h5>Placeholder for YOU HAVE NEW MESSAGES</h5>
     </div>
 </template>
 
 <style scoped>
 .home-div{padding:20px;}
 .friend-requests{background-color:aqua;text-align:center;padding:1px;}
+.search-friends-btn{color: blue;}
 </style>
 
 <script setup>
@@ -29,7 +30,8 @@ defineProps({
     // below are props I needed to pass to create a fake fetch system
     user_database:Array,
     friend_requests:Array,
-    chat_messages:Array
+    chat_messages:Array,
+    current_user:Object
 }); 
 </script>
 

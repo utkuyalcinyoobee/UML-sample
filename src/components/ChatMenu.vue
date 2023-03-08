@@ -1,25 +1,22 @@
 <template>
-    <div class="search-user-div">
-        <h1>SEARCH USERS</h1>
-        <input type="text" v-model="search_query" placeholder="search">
-        <input type="submit" value="search" @click="fetch_GET_search_results">
+    <div class="chat-menu-div">
+
         
     </div>
 </template>
 
 <style scoped>
-.search-user-div{padding: 20px;}
+.chat-menu-div{padding: 10px;}
 </style>
 
 <script setup>
 defineProps({ 
     // real prop for this component
     user_id: String, 
+    recipient_id:String,
     // below are props I needed to pass to create a fake fetch system
     user_database:Array,
-    friend_requests:Array,
     chat_messages:Array,
-    current_user:Object
 }); 
 </script>
 
@@ -27,14 +24,16 @@ defineProps({
 export default {
     data(){
         return{
-            search_query:'',
-            search_results:[]
+            chat_message:''
         }
     },
     methods:{
-        fetch_GET_search_results(){
-
+        fetch_POST_send_message(){
+            
         }
+    },
+    created(){
+        this.fetch_POST_send_message();
     }
 }
 </script>

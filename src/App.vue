@@ -7,7 +7,7 @@ import Footer from './components/Footer.vue';
 <div class="main-container">
   <Header />
 
-  <router-view :user_id="current_user_id" :user_database="users_database" :friend_requests="friend_requests_database" :chat_messages="chat_messages_database"></router-view>
+  <router-view :user_id="current_user._id" :user_database="users_database" :friend_requests="friend_requests_database" :chat_messages="chat_messages_database" :current_user="current_user"></router-view>
 
   <Footer />
 </div>
@@ -23,7 +23,7 @@ body{margin: 0;}
 export default {
   data(){
     return{
-      current_user_id:'user002',
+      current_user:{_id:'user002'},
 
       // USER DATABASE
       users_database:[

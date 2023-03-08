@@ -7,8 +7,7 @@ import Home from '../views/Home.vue'
 import Signup from '../views/SignUp.vue'
 import Login from '../views/Login.vue'
 import SearchUser from '../views/SearchUser.vue'
-import ViewRequests from '../views/ViewRequests.vue'
-import ViewMessages from '../views/ViewMessages.vue'
+import Friends from '../views/Friends.vue'
 
 const routes = [
     {
@@ -32,14 +31,9 @@ const routes = [
         component: SearchUser
     },
     {
-        path: '/view-requests',
-        name: 'View Requests', 
-        component: ViewRequests
-    },
-    {
-        path: '/view-messages',
-        name: 'View Messages', 
-        component: ViewMessages
+        path: '/friends',
+        name: 'Friends', 
+        component: Friends
     }
 ]
 // code below is NOT to be edited
