@@ -44,10 +44,10 @@ export default {
         }
     },
     methods:{
-        fetch_GET_current_user(){
+        fetch_GET_current_user(){ // fetch userObj from 'user_database' based on the user ID we are currently logged as
             this.current_user_obj = this.user_database.filter((user)=>user._id==this.user_id)[0];
         },
-        fetch_GET_incoming_friend_requests(){
+        fetch_GET_incoming_friend_requests(){ // fetch an array of friend request objects from 'friend_requests_database' where currently logged user ID is the recipient
             this.incoming_friend_requests = this.friend_requests.filter((request)=>request.id_of_user_receiving_request==this.user_id && request.ignored==false)
         }
     },

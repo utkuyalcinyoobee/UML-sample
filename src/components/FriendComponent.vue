@@ -26,7 +26,7 @@ export default {
         }
     },
     methods:{
-        fetch_GET_friend_info(){
+        fetch_GET_friend_info(){ // fetch the userObj for the friend ID (we received as a prop) from the 'user_database'
             this.friend_obj = this.user_database.filter((user)=>user._id==this.friend_id)[0]
         }
     },

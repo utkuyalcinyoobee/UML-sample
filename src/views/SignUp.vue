@@ -47,7 +47,7 @@ export default {
         }
     },
     methods:{
-        fetch_POST_sign_up(){
+        fetch_POST_sign_up(){ // Create a new userObj in 'user_database' with the info sign-up is providing (from user inputs)
             this.new_user._id = 'user'+(this.user_database.length+1);
             this.new_user.username=this.username_input;
             this.new_user.first_name=this.first_name_input;

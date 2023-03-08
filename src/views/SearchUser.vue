@@ -32,7 +32,7 @@ export default {
         }
     },
     methods:{
-        fetch_GET_search_results(){
+        fetch_GET_search_results(){ // this would fetch an array of userObjs from 'user_database' that meet the search criteria
 
         }
     }

@@ -31,7 +31,7 @@ export default {
         }
     },
     methods:{
-        fetch_GET_friend_list(){
+        fetch_GET_friend_list(){ // fetch the friend_list_array property of userObj we are currently logged in (that array has the user IDs of the friends of currently logged user)
             this.friend_list = this.user_database.filter((user)=>user._id==this.user_id)[0].friend_list_array
         }
     },

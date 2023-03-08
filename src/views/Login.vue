@@ -1,9 +1,7 @@
 <template>
     <div class="login-div">
         <h1>LOGIN PAGE</h1>
-        <router-link to="sign-up">
-            <h3>Sign up as New User</h3>
-        </router-link>
+        <router-link to="sign-up"><h3>Sign up as New User</h3></router-link>
         <h3>or login as</h3>
         <div class="flex-div">
             <h3 @click="fetch_GET_log_as_user(user._id)" class="user" v-for="user in user_database">{{ user.username }}({{ user._id }})</h3>
@@ -32,9 +30,9 @@ defineProps({
 <script>
 export default {
     methods:{
-        fetch_GET_log_as_user(userID){
+        fetch_GET_log_as_user(userID){ // fetch the userObj's ID from 'user_database' with the account we logged
             this.current_user._id = userID;
-            this.$router.push('/')
+            this.$router.push('/');
         }
     }
 }

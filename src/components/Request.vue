@@ -47,18 +47,18 @@ export default {
         ignore_request(){
             this.fetch_PUT_update_request_as_ignored();
         },
-        fetch_PUT_update_user_friendlist_for_user(userID,friendID){
+        fetch_PUT_update_user_friendlist_for_user(userID,friendID){ // update userOBJ in 'user_database' for the user with userID, and the update is adding the friendID into its .friend_list_array
             this.user_database.filter((user)=>user._id==userID)[0].friend_list_array.push(friendID);
         },
-        fetch_PUT_update_request_as_ignored(){
+        fetch_PUT_update_request_as_ignored(){ // update the friend request object (with this request id) in 'friend_requests_database', and the update is changing its .ignored property to true
             this.request_obj.ignored = !this.request_obj.ignored;
         },
-        fetch_DELETE_delete_accepted_request(){
+        fetch_DELETE_delete_accepted_request(){ // delete the friend request object (with this request id) from the 'friend_requests_database'
             let request_index = this.friend_requests.indexOf(this.request_obj);
             this.friend_requests.splice(request_index,1);
             this.accepted=true;
         },
-        fetch_GET_sender_info(){
+        fetch_GET_sender_info(){ // fetch the userObj (for the userID we learned from the friend request object) from the 'user_database'
           this.request_sender_user_obj = this.user_database.filter((user)=>user._id==this.request_obj.id_of_user_sending_request)[0]
         }
     },

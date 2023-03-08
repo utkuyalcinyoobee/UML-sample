@@ -28,12 +28,12 @@ export default {
         }
     },
     methods:{
-        fetch_POST_send_message(){
+        fetch_POST_send_message(){ // create a new chat message object in 'chat_messages_database'
             
         }
     },
     created(){
-        this.fetch_POST_send_message();
+    
     }
 }
 </script>
